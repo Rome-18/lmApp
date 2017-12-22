@@ -16,6 +16,9 @@
 - [ ] 预测模式可视化
 - [ ] 帧信息可视化，如参考关系，帧比特，残差块...
 - [ ] 其他解码器如HEVC、3D-HEVC等
+## BUG记录
+
+* 打开一个非8bit位深的yuv文件会死循环，需要强制结束进程
 
 ## 测试版本下载
 [lmSHVCBitStreamPlayer_0.9.0下载](http://download.csdn.net/detail/li651138628/9926455)

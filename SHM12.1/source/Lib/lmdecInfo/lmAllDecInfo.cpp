@@ -41,6 +41,7 @@ void lmAllDecInfo::xoutCtus(std::ofstream& po,TComPic *mpc,int idx)
 		TComDataCU* pCtu = mpc->getCtu(ctuRsAddr);
 		//std::vector<std::vector<int>> CU_split{ {} ,{},{},{} };
 		//std::vector<int> CTU_Bit{};
+		Pel* yaddr = mpc->getPicYuvRec()->getAddr(COMPONENT_Y, ctuRsAddr);
 		switch (idx)
 		{
 		case 0:xoutCtu_split(po,pCtu); break;
@@ -78,7 +79,6 @@ void lmAllDecInfo::xoutCtu_split(std::ofstream& pfo, TComDataCU* mCtu/*, std::ve
 // 		c[2].push_back(g_auiRasterToPelX[rasPos]);
 // 		c[3].push_back(g_auiRasterToPelY[rasPos]);
 		i += skippos;
-
 	}
 	std::vector<int> dzIsx;
 	gCode_zIdx(c, dzIsx);
